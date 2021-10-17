@@ -1,0 +1,127 @@
+*{
+  color:whitesmoke;
+}
+
+body{
+  background-color: #212529;
+}
+
+header {
+  border-bottom: 2px solid cadetblue;
+}
+
+#title{
+  text-align: center;
+  font-size: 85px;
+  text-decoration: none;
+  font-family: 'Akronim', cursive;
+}
+
+#title_onclick:hover{
+  cursor: pointer;
+}
+
+#account{
+  position: absolute;
+  right: 24px;
+  top: -10px;
+  color: wheat;
+}
+
+.account{
+  background-color: transparent;
+  border-style: groove;
+  border-color: springgreen;
+  font-size: 40px;
+  border-radius: 15px;
+  font-family: 'Bebas Neue', cursive;
+}
+
+.account:hover{
+  cursor: pointer;
+}
+
+#login_btn:hover{
+  cursor: pointer;
+}
+
+#logo{
+position: absolute;
+left: 24px;
+top: 24px;
+animation: rotate_logo 15s infinite;
+width: 85px;
+height: 85px;
+}
+
+@keyframes rotate_logo{
+  15%{
+    transform: rotate(150deg);
+  } 50%{
+    transform: rotate(75deg);
+  } 75%{
+    transform: rotate(150deg);
+  } 100%{
+    transform: rotate(0deg);
+  }
+}
+
+#upload{
+  color: aliceblue;
+  background-color: transparent;
+  position: absolute;
+  right: 15px;
+  width: fit-content;
+  font-size: 24px;
+  border-radius: 15px;
+  border-color: cadetblue;
+}
+
+#search{
+  margin-top: 15px;
+  position: relative;
+  text-align: center;
+}
+
+#search_bar{
+  background-color: transparent;
+  width: 850px;
+  height:fit-content;
+  border-radius: 10px;
+  border-color: cadetblue;
+  font-size: 24px;
+}
+
+#search_bar::placeholder{
+  text-align: center;
+}
+
+#search_bar_btn{
+  color: aliceblue;
+  background-color: transparent;
+  height: fit-content;
+  width: fit-content;
+  border-radius: 10px;
+  border-color: cadetblue;
+  font-size: 24px;
+}
+
+#contents{
+  border-style: groove;
+  border-width: 2px;
+  border-color: cadetblue;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.content{
+  border-style: groove;
+  border-width: 2px;
+  border-color: cadetblue;
+  inline-size: 500px;
+  block-size: 200px;
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+  color: aliceblue;
+}

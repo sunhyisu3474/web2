@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akronim&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script src="/js/router/router_function/index.js"></script>
+    <title>Welcome to INDEX</title>
+  </head>
+
+  <body>
+    <header>
+      <div id="title"><span id="title_onclick" onclick="title_onclick()">SIGNATURE</span>
+        <div>
+          <img src="./img/logo.png" alt="이미지가 없습니다." id="logo">
+        </div>
+        <div id="account">
+          <button onclick="login_btn_click()" class="account" id="sign_in">SIGN IN</button>
+          <button onclick="register_btn_click()" class="account" id="sign_up">SIGN UP</button>
+        </div>
+      </div>
+
+    </header>
+    <main>
+      <div id="search">
+        <input id="search_bar" placeholder="검색 내용">
+        <button id="search_bar_btn">검색</button>
+        </input>
+        <button id="upload" onclick="upload_onclick()">게시물 작성</button>
+      </div>
+      <div id="contents">
+        <div class="content" id="content_1">컨텐츠가 업데이트 될 공간입니다.</div>
+        <div class="content" id="content_2">컨텐츠가 업데이트 될 공간입니다.</div>
+        <div class="content" id="content_3">컨텐츠가 업데이트 될 공간입니다.</div>
+        <div class="content" id="content_4">컨텐츠가 업데이트 될 공간입니다.</div>
+        <div class="content" id="content_5">컨텐츠가 업데이트 될 공간입니다.</div>
+      </div>
+    </main>
+  </body>
+
+</html>
