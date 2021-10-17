@@ -1,6 +1,6 @@
 const express = require('express');
 const server = express();
-const port = 8001;
+const port = 80;
 const database = require('./js/DB/database');
 const session = require('express-session');
 const MySQLStore = require('express-mysql-session')(session);
@@ -38,7 +38,18 @@ server.listen(port, function (error) {
 });
 
 server.get('/', function (request, response) {
-  return response.render('index', {});
+  database.db.query(`SELECT title, content, writer FROM post WHERE writer = "관리자"`, function (error, post) {
+    if (error) {
+      console.log(error);
+    } else {
+      return response.render('index', {
+        title: post[1].title,
+        content: post[1].content,
+        writer: post[1].writer
+      });
+    }
+  });
+
 });
 
 server.get('/login', function (request, response) {
@@ -55,6 +66,7 @@ server.post('/login', function (request, response) {
       bcrypt.compare(request.body.login_pw, data_pw, function (error, isValue) {
         if (isValue) {
           console.log("[SIGN IN] ".blue + " 로그인 되었습니다.");
+          request.session.name = request.body.login_id;
           return response.send(`<script>
             alert("로그인에 성공하였습니다.");
             location.href = '/';
@@ -154,7 +166,7 @@ server.post('/upload', function (request, response) {
         console.log("요청하신 데이터가 정상적으로 처리되었습니다.");
         return response.send(`<script>
       alert("요청하신 데이터가 정상적으로 처리되었습니다");
-      location.href = '/upload';
+      location.replace('/');
       </script>`);
       }
     });

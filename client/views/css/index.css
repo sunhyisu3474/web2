@@ -1,20 +1,16 @@
-*{
-  color:whitesmoke;
-}
-
 body{
-  background-color: #212529;
+  margin: 0px;
 }
 
-header {
-  border-bottom: 2px solid cadetblue;
-}
-
-#title{
+#header_title{
   text-align: center;
   font-size: 85px;
   text-decoration: none;
   font-family: 'Akronim', cursive;
+}
+
+span#title_onclick{
+  color: black;
 }
 
 #title_onclick:hover{
@@ -31,10 +27,11 @@ header {
 .account{
   background-color: transparent;
   border-style: groove;
-  border-color: springgreen;
+  border-color: black;
   font-size: 40px;
   border-radius: 15px;
   font-family: 'Bebas Neue', cursive;
+  color: black;
 }
 
 .account:hover{
@@ -66,21 +63,34 @@ height: 85px;
   }
 }
 
-#upload{
-  color: aliceblue;
+div#navigator{
+  border-top: 2px groove black;
+  background-color: #222222;
+  height: 55px;
+  display: flex;
+  justify-content: space-around;
+}
+
+button.menu{
   background-color: transparent;
-  position: absolute;
-  right: 15px;
   width: fit-content;
   font-size: 24px;
-  border-radius: 15px;
-  border-color: cadetblue;
+  color: #c1c1c1;
+  border-style: none;
+}
+
+button.menu:hover{
+  background-color: #080808;
+}
+
+#upload:hover{
+  cursor: pointer;
 }
 
 #search{
-  margin-top: 15px;
   position: relative;
   text-align: center;
+  top: 24px;
 }
 
 #search_bar{
@@ -88,8 +98,9 @@ height: 85px;
   width: 850px;
   height:fit-content;
   border-radius: 10px;
-  border-color: cadetblue;
+  border-color: black;
   font-size: 24px;
+  color: black;
 }
 
 #search_bar::placeholder{
@@ -97,31 +108,64 @@ height: 85px;
 }
 
 #search_bar_btn{
-  color: aliceblue;
   background-color: transparent;
   height: fit-content;
   width: fit-content;
   border-radius: 10px;
-  border-color: cadetblue;
-  font-size: 24px;
+  border-color: black;
+  font-size: 15px;
+  margin-top: 10px;
 }
 
-#contents{
-  border-style: groove;
-  border-width: 2px;
-  border-color: cadetblue;
+#search_bar_btn:hover{
+  cursor: pointer;
+}
+
+div#content_box{
+  border-inline: 2px groove black;
+  border-top: 2px groove black;
+  width: 850px;
+  height: fit-content;
   margin-top: 15px;
-  text-align: center;
+  color: aliceblue;
 }
 
-.content{
-  border-style: groove;
-  border-width: 2px;
-  border-color: cadetblue;
-  inline-size: 500px;
-  block-size: 200px;
-  display: inline-block;
-  margin: 10px;
+div#index{
+  width: 850px;
+  height: fit-content;
+  color: black;
+  border-bottom: 2px groove black;
+  font-size: 24px;
+  font-weight: 850;
+}
+
+dl{
+  display: flex;
+  justify-content: space-around;
+  color: black;
+}
+
+dt.content, dd.content{
+  color: black;
+}
+
+div.content_line{
+  border-block: 1px groove black;
+}
+
+div#contents_layout{
+  text-align: -webkit-center;
+}
+
+div#TODO{
+  position: relative;
   text-align: center;
-  color: aliceblue;
+  top: 50px;
+  color: black;
+}
+
+textarea{
+  width: 850px;
+  height: 150px;
+  color: black;
 }
