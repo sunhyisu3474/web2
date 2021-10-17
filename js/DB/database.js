@@ -2,20 +2,20 @@ const mysql = require('mysql');
 
 ///////////////  /*  DB 정보  */  ///////////////
 const db = mysql.createConnection({
-	host: 'localhost',
-	database: 'web',
-	user: 'root',
+	host: 'nodejs-011.cafe24.com',
+	database: 'sunhyisu3474',
+	user: 'Sunhyisu344774',
 	password: '#Sunhyisu344774',
-	port: '3474',
+	port: '3306',
 	multipleStatements: true  // 다중쿼리 허용 설정
 });
 
 const sessionDB = {
-	host: 'localhost',
-	database: 'web',
-	user: 'root',
+	host: 'nodejs-011.cafe24.com',
+	database: 'sunhyisu3474',
+	user: 'Sunhyisu344774',
 	password: '#Sunhyisu344774',
-	port: '3474'
+	port: '3306'
 };
 ///////////////  /*  DB 정보  */  ///////////////
 
