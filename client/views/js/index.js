@@ -1,3 +1,5 @@
+const {request} = require("express");
+
 function login_btn_click() {
   location.pathname = "login";
 }
@@ -12,4 +14,14 @@ function title_onclick() {
 
 function upload_onclick() {
   location.href = 'upload';
+}
+
+function sign_out_onclick() {
+  request_session.destroy(function (error) {
+    if (error) {
+      console.log(error);
+    } else {
+      location.href = '/';
+    }
+  });
 }

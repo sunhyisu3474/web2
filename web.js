@@ -44,7 +44,8 @@ server.get('/', function (request, response) {
     } else {
       return response.render('index', {
         post: post,
-        request_session_name: request.session.name
+        request_session_name: request.session.name,
+        request_session: request.session
       });
     }
   });
