@@ -1,6 +1,6 @@
 const express = require('express');
 const server = express();
-const port = 8001;
+const port = 80;
 const database = require('./js/DB/database');
 const session = require('express-session');
 const MySQLStore = require('express-mysql-session')(session);
@@ -19,12 +19,12 @@ server.use(express.static(__dirname));
 server.use(express.static(__dirname + '\/client\/views'));
 server.use(session({
   key: 'sunhyisu',  // 세션의 키 값
-  secret: '#signature',  // 암호화 키 값
+  secret: '#Sunhyisu344774',  // 암호화 키 값
   store: sessionStore,
   resave: false,  // 세션을 항상 저장?
   saveUninitialized: true,
   cookie: {
-    maxAge: 2400 * 60 * 60
+    maxAge: 900000  // 15분
   }
 }));
 
@@ -43,13 +43,11 @@ server.get('/', function (request, response) {
       console.log(error);
     } else {
       return response.render('index', {
-        title: post[1].title,
-        content: post[1].content,
-        writer: post[1].writer
+        post: post,
+        request_session_name: request.session.name
       });
     }
   });
-
 });
 
 server.get('/login', function (request, response) {
@@ -76,7 +74,7 @@ server.post('/login', function (request, response) {
           return response.send(`<script>
             alert("일치하는 계정 정보가 존재하지 않습니다.");
             location.href = '/login';
-            </script>`)
+            </script>`);
         }
         database.db.destroy();  // 로그인 완료 된 경우 DB 연결을 종료한다.
       });
@@ -109,12 +107,13 @@ server.post('/register', function (request, response) {
                   location.href = '/login';
                   </script>`);
               } else if (!ER_DUP_ENTRY) {
-                console.log("[SIGN-UP] ".blue + " 새로운 계정이 생성되었습니다.");
-                request.session.uid = request.body.registerID;
-                return response.send(`<script>
+                request.session.save(function (error) {
+                  console.log("[SIGN-UP] ".blue + " 새로운 계정이 생성되었습니다.");
+                  return response.send(`<script>
         alert("계정이 생성되었습니다.\\n로그인 페이지로 이동합니다.");
         location.replace('login');
         </script>`);
+                });
               } else {
                 throw error;
               }
@@ -144,7 +143,11 @@ server.post('/register', function (request, response) {
 });
 
 server.get('/upload', function (request, response) {
-  return response.render('upload', {});
+  if (request.session.name) {
+    return response.render('upload', {});
+  } else {
+    return response.send(`<script>alert("로그인 후 이용 가능합니다.");</script>`)
+  }
 });
 
 server.post('/upload', function (request, response) {

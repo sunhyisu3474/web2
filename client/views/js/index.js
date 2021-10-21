@@ -13,7 +13,3 @@ function title_onclick() {
 function upload_onclick() {
   location.href = 'upload';
 }
-
-function contents_onload() {
-
-}

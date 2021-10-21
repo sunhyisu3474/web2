@@ -2,26 +2,30 @@ body{
   margin: 0px;
 }
 
-#header_title{
-  text-align: center;
+div#top_header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+div#header_title{
+  color: black;
   font-size: 85px;
   text-decoration: none;
   font-family: 'Akronim', cursive;
+  position: relative;
+  left: 50px;
 }
 
-span#title_onclick{
-  color: black;
-}
-
-#title_onclick:hover{
+div#header_title:hover{
   cursor: pointer;
 }
 
 #account{
-  position: absolute;
-  right: 24px;
-  top: -10px;
+  right: 15px;
   color: wheat;
+  position: relative;
+
 }
 
 .account{
@@ -44,11 +48,11 @@ span#title_onclick{
 
 #logo{
 position: absolute;
-left: 24px;
-top: 24px;
 animation: rotate_logo 15s infinite;
 width: 85px;
 height: 85px;
+left: 15px;
+position: relative;
 }
 
 @keyframes rotate_logo{
@@ -167,4 +171,24 @@ div#TODO{
 textarea{
   width: 850px;
   height: 150px;
+<<<<<<< HEAD
+=======
+}
+
+table, tr, th, td{
+  border-width: 1px;
+  border-color: #080808;
+  border-style: groove;
+  text-align: center;
+}
+
+table{
+  width: 850px;
+  height: fit-content;
+}
+
+div#table_contents{
+  text-align: -webkit-center;
+  margin-top: 15px;
+>>>>>>> d1ee75a (update)
 }
