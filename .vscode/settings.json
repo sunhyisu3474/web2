@@ -15,7 +15,7 @@
   "files.autoSave": "afterDelay",
   "editor.fontSize": 15,
   "editor.tabSize": 2,
-  "editor.fontFamily": "'Source Code Pro Semibold'",
+  "editor.fontFamily": "",
   "editor.accessibilityPageSize": 15,
   "editor.wordWrapColumn": 150,
   "workbench.editor.wrapTabs": true,
@@ -25,7 +25,6 @@
   "explorer.incrementalNaming": "smart",
   "editor.cursorStyle": "line-thin",
   "files.autoSaveDelay": 900000,
-  "editor.codeLensFontFamily": "'Source Code Pro Semibold'",
   "npm-intellisense.packageSubfoldersIntellisense": true,
   "npm-intellisense.scanDevDependencies": true,
   "npm-intellisense.showBuildInLibs": true,
@@ -59,5 +58,10 @@
       "username": "sunhyisu3474",
       "password": "Sunhyisu344774"
     }
-  ]
+  ],
+  "editor.formatOnType": true,
+  "debug.console.fontSize": 15,
+  "markdown.preview.fontSize": 15,
+  "terminal.integrated.fontSize": 15,
+  "markdown.preview.lineHeight": 1.5
 }
