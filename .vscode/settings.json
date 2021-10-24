@@ -63,5 +63,9 @@
   "debug.console.fontSize": 15,
   "markdown.preview.fontSize": 15,
   "terminal.integrated.fontSize": 15,
-  "markdown.preview.lineHeight": 1.5
+  "markdown.preview.lineHeight": 1.5,
+  "editor.formatOnSave": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "git.enableSmartCommit": true
 }
